@@ -12,8 +12,8 @@ The designs were created to the following widths:
 ### Primary
 
 - Soft Cyan (Full Slider Bar): hsl(174, 77%, 80%)
-- Strong Cyan (Slider Backround): hsl(174, 86%, 45%)
-- Light Grayish Red (Discount Background): hsl(14, 92%, 95%)
+- Strong Cyan (Slider Backround): 
+- Light Grayish Red (Discount Background): hsl(14, 92%,hsl(174, 86%, 45%) 95%)
 - Light Red (Discount Text): hsl(15, 100%, 70%)
 - Pale Blue (CTA Text): hsl(226, 100%, 87%)
 
