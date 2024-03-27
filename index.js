@@ -11,13 +11,16 @@ const pricing = [
     {pageViews: "1M", amtPerMonth: "$29.00"}
 ]
 
+const mobileDiscount = "25%";
+const discount = "25% discount";
 
 const pageViews = document.getElementById('pageViews');
 const amtPerMonth = document.getElementById('amtPerMonth');
 
-const slider = document.getElementById('amtChanger');
+const slider = document.getElementById('slider');
+const sliderPointer = document.getElementById('monthAmt');
 
-slider.onchange = (e) => {
+sliderPointer.onchange = (e) => {
     let price = e.currentTarget.value;
 
     pageViews.innerHTML = pricing[price].pageViews;
@@ -32,16 +35,18 @@ var width = window.innerWidth;
 
 const cardHeader = document.getElementById('cardHeader');
 const monthAmt = document.getElementById('monthAmt');
+const topCard = document.getElementById('topCard');
+const cardBilling = document.getElementById('cardBilling');
 
 window.onresize = (e) => {
     
     width = e.currentTarget.innerWidth;
 
     if(width >= 768){
-        cardHeader.insertBefore(monthAmt, cardHeader.childNodes[3]);
+        topCard.insertBefore(slider,topCard.childNodes[3]);
     }
 
     if(width < 768){
-        cardHeader.append(monthAmt);
+        cardHeader.insertBefore(slider, cardHeader.childNodes[3]);
     }
 }
