@@ -4,39 +4,39 @@
  * slider movement
  */
 const pricing = [
-    {pageViews: "10K", amtPerMonth: "$7.00"},
-    {pageViews: "50K", amtPerMonth: "$11.00"},
-    {pageViews: "100K", amtPerMonth: "$16.00"},
-    {pageViews: "500K", amtPerMonth: "$22.00"},
-    {pageViews: "1M", amtPerMonth: "$29.00"}
+    {pageViews: "10K", amtPerMonth: "$7.00", discountPerMonth: "$5.25"},
+    {pageViews: "50K", amtPerMonth: "$11.00", discountPerMonth: "$8.25"},
+    {pageViews: "100K", amtPerMonth: "$16.00", discountPerMonth: "$12.00"},
+    {pageViews: "500K", amtPerMonth: "$22.00", discountPerMonth: "$16.50"},
+    {pageViews: "1M", amtPerMonth: "$29.00", discountPerMonth: "$21.75"}
 ]
-
-const mobileDiscount = "25%";
-const discount = "25% discount";
 
 const pageViews = document.getElementById('pageViews');
 const amtPerMonth = document.getElementById('amtPerMonth');
 
-const slider = document.getElementById('slider');
-const sliderPointer = document.getElementById('monthAmt');
+const changeAmt = document.getElementById('amtChanger');
+const toggleBilling = document.getElementById('toggle');
 
-sliderPointer.onchange = (e) => {
+changeAmt.onpointermove = (e) => {
     let price = e.currentTarget.value;
 
-    pageViews.innerHTML = pricing[price].pageViews;
-    amtPerMonth.innerHTML = pricing[price].amtPerMonth;
+    if(!toggleBilling.checked){
+        pageViews.innerHTML = pricing[price].pageViews;
+        amtPerMonth.innerHTML = pricing[price].amtPerMonth;
+    } else {
+        pageViews.innerHTML = pricing[price].pageViews;
+        amtPerMonth.innerHTML = pricing[price].discountPerMonth;
+    }   
 }
-
-
 /**
  * Change Amt Per Month Location based on screen size
  */
 var width = window.innerWidth;
 
-const cardHeader = document.getElementById('cardHeader');
-const monthAmt = document.getElementById('monthAmt');
+
+const slider = document.getElementById('slider');
 const topCard = document.getElementById('topCard');
-const cardBilling = document.getElementById('cardBilling');
+const cardHeader = document.getElementById('cardHeader');
 
 window.onresize = (e) => {
     

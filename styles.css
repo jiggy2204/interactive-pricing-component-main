@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
 :root {
     /* PRIMARY */
     --softCyan: hsl(174, 77%, 80%);
@@ -14,10 +16,6 @@
     --grayBlue: hsl(225, 20%, 60%);
     --dkBlue: hsl(227, 35%, 25%);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
-
-
 
 *,
 *::after,
@@ -100,10 +98,27 @@ section {
 }
 
 .card-billing {
-  width: 60%;
+  width: 275px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+#discountText {
+  position: relative;
+}
+
+#discountText::after {
+  content: "-25%";
+  position: absolute;
+  padding: 5px 10px;
+  color: var(--ltRed);
+  background-color: var(--ltGrayRed);
+  font-weight: 800;
+  font-size: .75em;
+  border-radius: 25px;
+  top: -10%;
+  right: -4.25em;
 }
 
 /***************** SLIDER CSS *****************/
@@ -320,7 +335,35 @@ footer {
 }
 
 @media only screen and (min-width: 1024px) {
-  .card-billing {
-    width: 43vw;
+
+  header {
+    margin: 2%;
+  }
+
+  main {
+    max-height: 800px;
+  }
+
+  #topCard,
+  #bottomCard {
+    max-width: 785px;
+  }
+
+  #topCard {
+    max-height: 860px;
+    padding: 75px 0;
+  }
+
+  #bottomCard {
+    max-height: 820px;
+  }
+
+  #pageView {
+    font-size: 1.25em;
+  }
+
+  #discountText::after {
+    content: "-25% discount";
+    right: -10em;
   }
 }
